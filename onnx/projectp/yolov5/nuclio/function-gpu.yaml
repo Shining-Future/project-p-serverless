@@ -17,7 +17,7 @@ spec:
   eventTimeout: 30s
   build:
     image: cvat.onnx.projectp.yolov5
-    baseImage: ubuntu:22.04
+    baseImage: nvidia/cuda:12.2.0-runtime-ubuntu22.04
 
     directives:
       preCopy:
@@ -36,11 +36,15 @@ spec:
 
   triggers:
     myHttpTrigger:
-      maxWorkers: 2
+      maxWorkers: 1
       kind: 'http'
       workerAvailabilityTimeoutMilliseconds: 10000
       attributes:
         maxRequestBodySize: 33554432 # 32MB
+
+  resources:
+    limits:
+      nvidia.com/gpu: 1
 
   platform:
     attributes:

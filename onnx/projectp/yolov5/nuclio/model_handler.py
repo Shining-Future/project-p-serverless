@@ -12,7 +12,7 @@ from projectp.inference import InferenceONNX
 class ModelHandler:
     def __init__(self, labels):
         self.model = None
-        self.load_network(model="yolov7-nms-640.onnx")
+        self.load_network(model="yolov5s-no-nms-2022-07-07-last.onnx")
         self.labels = labels
 
     def load_network(self, model):

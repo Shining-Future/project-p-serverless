@@ -24,7 +24,7 @@ spec:
         - kind: USER
           value: root
         - kind: RUN
-          value: apt update && apt install --no-install-recommends -y wget python3-pip
+          value: apt update && apt install --no-install-recommends -y git wget python3-pip
         - kind: RUN
           value: pip install -r https://raw.githubusercontent.com/Shining-Future/project-p-inference/master/requirements.txt && pip install -e git+https://github.com/Shining-Future/project-p-inference.git#egg=projectp
         - kind: WORKDIR

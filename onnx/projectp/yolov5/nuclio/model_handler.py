@@ -38,6 +38,7 @@ class ModelHandler:
         detections, _, _ = self.model.process_image(image, confidence=threshold, shape='box', save=False, debug=True)
 
         results = []
+        print(f"DEBUG: Detections shape = {detections.shape}")
         if len(detections):
             boxes = detections[:, 1:5]
             labels = detections[:, 6]

@@ -29,13 +29,13 @@ def handler(context, event):
     context.logger.info("Running YOLOv5 Project P ONNX model...")
     data = event.body
     buf = io.BytesIO(base64.b64decode(data["image"]))
-    threshold = float(data.get("threshold", 0.5))
+    threshold = float(data.get("threshold", 0.45))
     image = Image.open(buf)
 
     results = context.user_data.model.infer(image, threshold)
-    print(f"Returned results = {len(results)}")
+    # print(f"Returned results = {len(results)}")
     answer = context.Response(body=json.dumps(results), headers={},
                               content_type='application/json', status_code=200)
-    print(f"DEBUG: answer =\n{answer}")
+    # print(f"DEBUG: answer =\n{answer}")
 
     return answer

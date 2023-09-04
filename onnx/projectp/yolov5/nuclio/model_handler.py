@@ -48,7 +48,7 @@ class ModelHandler:
                 ytl = max(int(box[1]), 0)
                 xbr = min(int(box[2]), w)
                 ybr = min(int(box[3]), h)
-                print(f"DEBUG: label = {label}")
+                # print(f"DEBUG: label = {label}")
 
                 results.append({
                     "confidence": str(score),
@@ -56,6 +56,6 @@ class ModelHandler:
                     "points": [xtl, ytl, xbr, ybr],
                     "type": "rectangle",
                 })
-            print(f"DEBUG: labels = {self.labels}")
+            # print(f"DEBUG: labels = {self.labels}")
 
         return results

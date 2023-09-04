@@ -14,7 +14,7 @@ spec:
   description: Ultralytics YOLO v5 via ONNX (no NMS) Project P
   runtime: 'python:3.8'
   handler: main:handler
-  eventTimeout: 30s
+  eventTimeout: 120s
   build:
     image: cvat.onnx.projectp.yolov5
     baseImage: nvidia/cuda:12.2.0-runtime-ubuntu22.04

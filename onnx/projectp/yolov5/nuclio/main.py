@@ -33,6 +33,9 @@ def handler(context, event):
     image = Image.open(buf)
 
     results = context.user_data.model.infer(image, threshold)
+    print(f"Returned results = {len(results)}")
+    answer = context.Response(body=json.dumps(results), headers={},
+                              content_type='application/json', status_code=200)
+    print(f"DEBUG: answer =\n{answer}")
 
-    return context.Response(body=json.dumps(results), headers={},
-        content_type='application/json', status_code=200)
+    return answer

@@ -38,7 +38,7 @@ spec:
     myHttpTrigger:
       maxWorkers: 2
       kind: 'http'
-      workerAvailabilityTimeoutMilliseconds: 10000
+      workerAvailabilityTimeoutMilliseconds: 100000
       attributes:
         maxRequestBodySize: 33554432 # 32MB
 

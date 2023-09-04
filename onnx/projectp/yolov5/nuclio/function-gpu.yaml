@@ -26,7 +26,7 @@ spec:
         - kind: RUN
           value: apt update && apt install --no-install-recommends -y git wget python3-pip
         - kind: RUN
-          value: pip install -r https://raw.githubusercontent.com/Shining-Future/project-p-inference/master/requirements.txt pyyaml && pip install -e git+https://github.com/Shining-Future/project-p-inference.git#egg=projectp
+          value: pip install -r https://raw.githubusercontent.com/Shining-Future/project-p-inference/master/requirements.txt pyyaml && pip install -e git+https://github.com/Shining-Future/project-p-inference.git#egg=projectp && true
         - kind: WORKDIR
           value: /opt/nuclio
         - kind: RUN

@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-import cv2
 import numpy as np
 import onnxruntime as ort
 
@@ -35,10 +34,10 @@ class ModelHandler:
         image = np.array(image)  # PIL -> numpy
         image = image[:, :, ::-1].copy()  # RGB -> BGR
         h, w, _ = image.shape
-        detections, _, _ = self.model.process_image(image, confidence=threshold, shape='box', save=False, debug=True)
+        detections, _, times = self.model.process_image(image, confidence=threshold, save=False)
 
         results = []
-        print(f"DEBUG: Detections shape = {detections.shape}")
+        print(f"Detections shape = {detections.shape}, done in {times['total']} sec")
         if len(detections):
             boxes = detections[:, 1:5]
             labels = detections[:, 6]

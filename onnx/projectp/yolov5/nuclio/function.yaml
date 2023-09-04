@@ -7,7 +7,8 @@ metadata:
     framework: onnx
     spec: |
       [
-        { "id": 0, "name": "pelican" }
+        { "id": 0, "name": "background" },
+        { "id": 1, "name": "pelican" }
       ]
 
 spec:

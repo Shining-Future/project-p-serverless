@@ -52,7 +52,7 @@ class ModelHandler:
 
                 results.append({
                     "confidence": str(score),
-                    "label": self.labels.get(label, "unknown"),
+                    "label": self.labels.get(int(label), "unknown"),
                     "points": [xtl, ytl, xbr, ybr],
                     "type": "rectangle",
                 })

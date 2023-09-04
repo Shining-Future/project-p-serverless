@@ -29,7 +29,7 @@ def handler(context, event):
     context.logger.info("Running YOLOv5 Project P ONNX model...")
     data = event.body
     buf = io.BytesIO(base64.b64decode(data["image"]))
-    threshold = float(data.get("threshold", 0.45))
+    threshold = float(data.get("threshold", 0.4))
     image = Image.open(buf)
 
     results = context.user_data.model.infer(image, threshold)

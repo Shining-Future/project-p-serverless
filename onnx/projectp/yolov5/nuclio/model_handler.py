@@ -38,7 +38,7 @@ class ModelHandler:
         detections, _, _ = self.model.process_image(image, confidence=threshold, save=False)
 
         results = []
-        if detections:
+        if len(detections):
             boxes = detections[:, 1:5]
             labels = detections[:, 6]
             scores = detections[:, 5]

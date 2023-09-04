@@ -2,7 +2,7 @@ metadata:
   name: onnx-projectp-yolov5
   namespace: cvat
   annotations:
-    name: YOLO v5
+    name: YOLO v5 Project P
     type: detector
     framework: onnx
     spec: |
@@ -11,7 +11,7 @@ metadata:
       ]
 
 spec:
-  description: Ultralytics YOLO v5 via ONNX (no NMS)
+  description: Ultralytics YOLO v5 via ONNX (no NMS) Project P
   runtime: 'python:3.8'
   handler: main:handler
   eventTimeout: 30s

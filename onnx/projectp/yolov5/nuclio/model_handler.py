@@ -34,10 +34,10 @@ class ModelHandler:
         image = np.array(image)  # PIL -> numpy
         image = image[:, :, ::-1].copy()  # RGB -> BGR
         h, w, _ = image.shape
-        detections, _, times = self.model.process_image(image, confidence=threshold, save=False)
+        detections, _, latency = self.model.process_image(image, confidence=threshold, save=False)
 
         results = []
-        print(f"Detections shape = {detections.shape}, done in {times['total']} sec")
+        print(f"Detections shape = {detections.shape}, done in {latency['total']:.2f} sec")
         if len(detections):
             boxes = detections[:, 1:5]
             labels = detections[:, 6]

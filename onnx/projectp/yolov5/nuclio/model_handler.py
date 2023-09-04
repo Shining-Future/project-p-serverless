@@ -35,7 +35,7 @@ class ModelHandler:
         image = np.array(image)  # PIL -> numpy
         image = image[:, :, ::-1].copy()  # RGB -> BGR
         h, w, _ = image.shape
-        detections, _, _ = self.model.prosess_image(image, confidence=threshold, save=False)
+        detections, _, _ = self.model.process_image(image, confidence=threshold, save=False)
 
         results = []
         if detections:
